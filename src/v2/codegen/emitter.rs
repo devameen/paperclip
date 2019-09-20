@@ -660,7 +660,7 @@ where
             .filter(|p| {
                 let skip = p.presence == ParameterIn::FormData && schema_path.is_some();
                 if skip {
-                    info!(
+                    warn!(
                         "Skipping form data parameter {:?} in path {:?} because \
                          the operation already has a body.",
                         p.name, self.path
